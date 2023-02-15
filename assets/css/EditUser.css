@@ -1,0 +1,208 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Montez);
+
+html{
+    height: 100%;
+}
+body{
+    background-image: url('../../assets/images/backg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
+    font-family: Lato;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.profile,.content{
+    color: white;
+    -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+    transition: 0.5s ease;
+}
+.profile{
+  position: relative;
+  top: 25px;
+  bottom: auto;
+  left: 0;
+  right: 0;
+  min-height: 100%;
+  height: auto;
+  width: 75%;
+  margin: auto;
+  margin-bottom: 100px;
+  background-color: #09090990;
+  border-top: 5px solid #cb4839;
+  
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 2.5px 5px #ccc;
+}
+
+
+/*Input Fields Styles
+=========================*/
+fieldset textarea,input{
+  font-family: Open Sans;
+  font-size: 15px;
+  color: #333;
+  background-color: #f7f7f7;
+  box-shadow: 0 0 0 1px #cb8e39;
+  padding: 3px;
+  width: 75%;
+  margin: 5px auto;
+  border: 0;
+  border-radius: 2.5px;
+  outline: 0;
+  transition: 0.3s ease;
+}
+
+.grid-35{
+    position: relative;
+    top: 3px;
+    width: 35%;
+    float: left;
+    font-weight: 750;
+    color: #ffffff;
+    /* text-align: left; */
+}
+.grid-65{
+  position: relative;
+  width: 65%;
+  float: right;
+  font-family: Source Sans Pro;
+  font-weight: 300;
+  font-size: 17px;
+}
+
+
+fieldset{
+  text-align: center;
+  margin-bottom: 5px;
+  padding: 3px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+fieldset:last-child{
+  border-bottom: none;
+}
+
+input.Btn{
+  width: 48%;
+  float: left;
+  display: block;
+  margin: 20px auto;
+  margin-left: 1%;
+  padding: 15px 0;
+  font-size: 16px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgb(239, 116, 0);
+  transition: 0.5s ease;
+}
+input.Btn:hover{
+  background-color: rgb(203, 74, 57);
+}
+#botones{
+  display: flex;
+  flex-direction: row;
+
+}
+
+
+/*FOOTER------------------------------------------*/
+#foot{
+  width: 100%;
+  background-color: #0a141daf;
+  margin-top: auto;
+}
+#foot .grupo-1{
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  padding: 20px 0px;
+}
+#foot .grupo-1 .box figure{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#foot .grupo-1 .box figure img{
+  padding-top: 40px;
+  width: 120px;
+}
+#foot .grupo-1 .box h2{
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+#foot .grupo-1 .box p{
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+#foot .grupo-1 .red-social a{
+  text-decoration: none;
+  width: 80px;
+  height: 80px;
+  line-height: 45px;
+  color: #fff;
+  margin-right: 2px;
+  /*background-color: #0d203393;*/
+  text-align: center;
+  transition: all 0.3s ease;
+}
+#foot .grupo-1 .red-social a:hover{
+  color: rgb(0, 163, 147);
+  transform: scale(1.4);
+}
+#foot .grupo-2{
+  background-color: #0a1a2a;
+  padding: 15px 10px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  
+}
+#foot .grupo-2 small{
+  font-size: 15px;
+}
+
+
+/*PARA QUE SEA RESPONSIVE AND   
+=========================*/
+@media only screen and (min-width: 768px){ /*Desktop*/
+  .profile{ 
+    width: 450px;
+  }
+  
+}
+@media only screen and (max-width: 768px){ /*Tablet*/
+  .profile{ 
+    width: 70%;
+  }
+  #botones{
+    flex-direction: column;
+  }
+
+  /*Footer*/
+  #foot .grupo-1{
+    width: 90%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+    padding: 35px 0px;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 520px){ /*Phone*/
+  .profile{
+    width: 90%;
+  }
+  #botones{
+    flex-direction: column;
+  }
+}
