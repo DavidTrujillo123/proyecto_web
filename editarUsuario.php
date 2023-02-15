@@ -85,7 +85,7 @@ $fnacimiento = $resultado_cliente[0]['fnacimiento'];
             <!--usuario-->
             <fieldset>
               <div class="grid-35">
-                <label for="location">Nombre de Usuario</label>
+                <label for="location">Nombre de Usuario:</label>
               </div>
               <div class="grid-65">
                 <input name="usuario" type="text" id="IDusuario" value = "<?php echo $row['usuario'];?>" readonly/>
@@ -96,7 +96,7 @@ $fnacimiento = $resultado_cliente[0]['fnacimiento'];
             <!--direccion-->
             <fieldset>
                 <div class="grid-35">
-                  <label for="location">Dirección</label>
+                  <label for="location">Dirección:</label>
                 </div>
                 <div class="grid-65">
                   <input name="direccion" type="text" id="IDdireccion" value = "<?php echo $direccion;?>"/>
@@ -106,7 +106,7 @@ $fnacimiento = $resultado_cliente[0]['fnacimiento'];
             <!--fnacimiento-->
             <fieldset>
               <div class="grid-35">
-                <label for="location">Fecha de Nacimiento</label>
+                <label for="location">Fecha de Nacimiento:</label>
               </div>
               <div class="grid-65">
                 <input name="fnacimiento" type="date" id="IDfnacimiento" value = "<?php echo $fnacimiento?>"/>
@@ -117,7 +117,7 @@ $fnacimiento = $resultado_cliente[0]['fnacimiento'];
             <!--email-->
             <fieldset>
               <div class="grid-35">
-                <label for="email">Correo Electrónico</label>
+                <label for="email">Correo Electrónico:</label>
               </div>
               <div class="grid-65">
                 <input name="email" type="email" id="IDemail" value = "<?php echo $row['email']?>" readonly/>
