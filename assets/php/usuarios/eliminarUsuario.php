@@ -10,6 +10,7 @@ echo("
 ");
 
 if(isset($_GET['mensaje'])){
+   global $bandera;
    $bandera= $_GET['mensaje'];
 } 
 
