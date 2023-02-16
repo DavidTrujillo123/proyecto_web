@@ -43,7 +43,6 @@ $sql = "SELECT * FROM carrito_item, carrito WHERE carrito_item.id_carrito=carrit
 $res = $db->OperSql($sql);
 $num_productos = $res->num_rows;//numero de productos para el boton del carro que se agregaron
 
-
 ?>
 
 <!DOCTYPE html>

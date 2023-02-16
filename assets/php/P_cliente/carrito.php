@@ -34,18 +34,35 @@ $id_carrito = $cart[$nrows]['id_carrito'];
 
 
 if (isset($_GET['agregar'])) {//Comprueba si la variable existe al mandar el codigo del producto 
-    $sql2 = "SELECT * FROM `carrito_item` WHERE carrito_item.id_carrito=$id_carrito AND carrito_item.codigo_producto=$_GET[agregar]";
+    $codigo = $_GET['agregar'];
+    // $sql2 = "SELECT * FROM `producto` WHERE codigo='$codigo'";
+    // $producto = $db->Read($sql2);
+
+    $sql2 = "SELECT * FROM `carrito_item` 
+            WHERE carrito_item.id_carrito=$id_carrito 
+            AND carrito_item.codigo_producto='$codigo'";
+
     $res = $db->OperSql($sql2);
     $num_productos = $res->num_rows;
+
     if ($num_productos == 0) {//Comprueba que no este ingresado ni una vez para no repetir el producto  
         $sql = "INSERT INTO 
-    carrito_item(id_carrito_item, id_carrito, codigo_producto, cantidad_cliente, subtotal)
-     VALUES (null,'$id_carrito',$_GET[agregar],'1',(SELECT precio FROM producto WHERE codigo_producto=$_GET[agregar])*1);";//Agrega una vez 
+                carrito_item(id_carrito_item, id_carrito, 
+                codigo_producto, cantidad_cliente, subtotal)
+                VALUES (null,'$id_carrito','$codigo','1',
+                (SELECT precio FROM producto WHERE 
+                codigo_producto='$codigo')*1);";//Agrega una vez 
         $prod_carrito = $db->OperSql($sql);
     } else {
         $fila = mysqli_fetch_array($res);
         $cantidad = $fila['cantidad_cliente'] + 1;//Si el producto ya esta en carrito se agrega una vez mas 
-        $sql = "UPDATE carrito_item SET carrito_item.cantidad_cliente=$cantidad , carrito_item.subtotal=(SELECT precio FROM producto WHERE codigo_producto=$_GET[agregar])*$cantidad WHERE carrito_item.codigo_producto=$_GET[agregar] AND carrito_item.id_carrito=$id_carrito";
+        $sql = "UPDATE carrito_item 
+                SET carrito_item.cantidad_cliente=$cantidad , 
+                carrito_item.subtotal=(SELECT precio 
+                FROM producto 
+                WHERE codigo_producto='$codigo')*$cantidad 
+                WHERE carrito_item.codigo_producto='$codigo' 
+                AND carrito_item.id_carrito=$id_carrito";
         $prod_carrito = $db->OperSql($sql);
     }
     echo ("<script> 
@@ -54,25 +71,29 @@ if (isset($_GET['agregar'])) {//Comprueba si la variable existe al mandar el cod
     </script> ");
 }
 if (isset($_POST['id1'])) { //comprueba la cantidad que envia el cliente exista 
-
-    $sql1 = "SELECT cantidad FROM producto WHERE codigo_producto= $_POST[id1] ";
+    $codigo = $_POST['id1'];
+    $sql1 = "SELECT cantidad FROM producto WHERE codigo_producto= '$codigo' ";
     $cantidad = $db->Read($sql1);
     $cantidadUnit = $cantidad[0]['cantidad'];
     if ($_POST['cantidad'] <= $cantidadUnit) {//comprueba que la cantidad que envia el cliente sea menor que la cantidad que hay en stock
         //Actualiza la cantidad
-
-        $sql = "UPDATE carrito_item SET carrito_item.cantidad_cliente=$_POST[cantidad] , 
-        carrito_item.subtotal=(SELECT precio FROM producto WHERE codigo_producto=$_POST[id1])*$_POST[cantidad] 
-        WHERE carrito_item.codigo_producto=$_POST[id1] AND carrito_item.id_carrito=$id_carrito";
+        $sql = "UPDATE carrito_item 
+                SET carrito_item.cantidad_cliente=$_POST[cantidad] , 
+                carrito_item.subtotal=(SELECT precio 
+                FROM producto 
+                WHERE codigo_producto='$codigo')*$_POST[cantidad] 
+                WHERE carrito_item.codigo_producto='$codigo' 
+                AND carrito_item.id_carrito=$id_carrito";
         $prod_carrito = $db->OperSql($sql);
     } else {
         echo ("<script> 
-    alert('Cantidad Insuficiente en stock !');
-    </script> ");
+                alert('Cantidad Insuficiente en stock !');
+            </script> ");
     }
 }
 if (isset($_GET['eliminar'])) {//comprueba la accion del eliminar la ejecuta 
-    $sql = "DELETE FROM `carrito_item` WHERE carrito_item.id_carrito_item=$_GET[eliminar]";
+    $sql = "DELETE FROM `carrito_item` 
+            WHERE carrito_item.id_carrito_item=$_GET[eliminar]";
     $eliminar_prod = $db->OperSql($sql);
 }
 

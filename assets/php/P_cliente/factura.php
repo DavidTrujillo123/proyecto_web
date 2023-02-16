@@ -88,7 +88,7 @@ while($fila=$resultado->fetch_assoc()){
    $id_cliente=$fila['id_carrito'];
 
      
-   $sql2="UPDATE producto SET cantidad = $RestarCantidad WHERE codigo_producto = $codigo";
+   $sql2="UPDATE producto SET cantidad = $RestarCantidad WHERE codigo_producto = '$codigo'";
  
       
    $operaciones=$db->OperSql($sql2);
