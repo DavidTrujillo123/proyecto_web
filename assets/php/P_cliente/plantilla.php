@@ -17,14 +17,18 @@ function Header()
     $this->Cell(30,5,'LICORERIA',0,0,'C');
     $this->Ln(5);
     $this->SetFont('Arial','',12);
-    $this->Cell(200,5,'Atahualpa y Teodoro Gomez',0,0,'C');
+    $this->Cell(80);
+    $this->Cell(30,5,'Atahualpa y Teodoro Gomez',0,1,'C');
+    $this->Cell(190,5,'Ibarra-Ecuador',0,1,'C');
+    $this->Cell(190,5,'Telf.: 0978690771',0,1,'C');
     $this->Cell(30);
-    $this->Cell(30,5,'Factura',1,2,'C');
+
     //Fecha
     $this->SetFont('Arial','',10);
    
     
-   
+   //Factura
+
     $this->SetY(1);
     $this->SetX(-35);
      $this->Cell(30,20,'Fecha:'.date("d/m/y"),0,0,'C');

@@ -32,10 +32,16 @@ $sql1 = "SELECT id_usuario FROM usuario WHERE usuario= '$usuario' or email='$usu
 $usuario1 = $db->Read($sql1);
 $id_usuario = $usuario1[0]['id_usuario'];
 
-$sql = "SELECT * FROM carrito_item, carrito WHERE carrito_item.id_carrito=carrito.id_carrito AND carrito.id_usuario=$id_usuario ";
+$sql = "SELECT * FROM carrito WHERE carrito.id_usuario=$id_usuario ";
+$res = $db->OperSql($sql);
+$num_carrito = $res->num_rows;
+$num_carrito = $num_carrito-1;
+$res = $res->fetch_all(MYSQLI_ASSOC);
+$id_carrito = $res[$num_carrito]['id_carrito'];
+
+$sql = "SELECT * FROM carrito_item, carrito WHERE carrito_item.id_carrito=carrito.id_carrito AND carrito.id_carrito='$id_carrito'";
 $res = $db->OperSql($sql);
 $num_productos = $res->num_rows;//numero de productos para el boton del carro que se agregaron
-
 
 ?>
 
