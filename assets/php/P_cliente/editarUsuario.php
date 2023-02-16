@@ -16,7 +16,7 @@ if (!isset($_SESSION['usuario'])) { //Si no existe una sesión activa
 $usuario = $_SESSION['usuario']; //asigna la sesión al usuario
 $db = new Conexion();
 
-$sql = "SELECT * FROM usuario WHERE usuario LIKE '$usuario'";
+$sql = "SELECT * FROM usuario WHERE usuario LIKE '$usuario' or email LIKE '$usuario'";
 $resultado_usuario  = $db->Read($sql);
 $cedula = $resultado_usuario[0]['cedula'];
 
@@ -63,7 +63,7 @@ $fnacimiento = $resultado_cliente[0]['fnacimiento'];
 
 </head>
 <body>  
-    <?php include('../../../footer_nav_cliente/nav_clientes.php');?>
+  <?php include('../../../footer_nav_cliente/nav_clientes.php');?>
     <div class="profile">
         <div class="content">
           <h1>Editar Perfil</h1>
