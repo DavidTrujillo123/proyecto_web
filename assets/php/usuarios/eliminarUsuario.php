@@ -12,7 +12,7 @@ if ($result) {
    
    <script>
    alert('Usuario eliminado correctamente');
-   window.location = '../../../login_registro.php'; 
+   window.location = '../../../index.html'; 
     </script>'");
 } else {
    http_response_code(500);
