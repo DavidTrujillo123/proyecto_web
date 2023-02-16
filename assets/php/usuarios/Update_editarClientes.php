@@ -22,7 +22,7 @@ function VerficarData($data){
         echo ('
             <script>
                 alert("Error: Ingrese nuevamente sus datos");
-                window.location = "../../../editarUsuario.php"; 
+                window.location = "../P_cliente/editarUsuario.php"; 
             </script>
         ');
         exit();//termina el script
@@ -48,7 +48,7 @@ if($bandera){
     echo ('
     <script>
         alert("Usuario actualizado correctamente");
-        window.location = "../../../editarUsuario.php"; 
+        window.location = "../P_cliente/editarUsuario.php"; 
     </script>
     ');
 }

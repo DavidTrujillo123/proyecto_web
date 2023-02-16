@@ -102,12 +102,12 @@ if (isset($_GET['eliminar'])) {
 </head>
 
 <body class="principal"  >
-    <div style="overflow-x: auto";>
-    <div id="tabla">
-    <?php
+<?php
     include('../../../footer_nav_cliente/nav_clientes.php');
 
     ?>
+    <div style="overflow-x: auto";>
+    <div id="tabla">
     <table>
         <tr>
             <th>Imagen</th>

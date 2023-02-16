@@ -35,9 +35,29 @@ $fnacimiento = $resultado_cliente[0]['fnacimiento'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/EditUser.css">
+    <link rel="stylesheet" href="../../css/estilo_paginaCliente.css">
+    <link rel="stylesheet" href="../../css/EditUser.css">
+    <link rel="shortcut icon" href="./assets/css/favicon.svg" type="image/svg+xml">
+
+    <!-- 
+  - custom css link
+-->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+    <!-- 
+  - google font link
+-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> -->
+
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <!-- <link rel="stylesheet" href="../../css/tabla.css" /> -->
     <!--Iconos-->
-    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script> -->
 
     <title>Editar Perfil</title>
 
@@ -47,7 +67,7 @@ $fnacimiento = $resultado_cliente[0]['fnacimiento'];
     <div class="profile">
         <div class="content">
           <h1>Editar Perfil</h1>
-          <form id="IDform" action="./assets/php/usuarios/Update_editarClientes.php" method = 'POST'>   
+          <form id="IDform" action="../usuarios/Update_editarClientes.php" method = 'POST'>   
 
           <?php foreach($resultado_usuario as $row){ ?>
             <!--nombre-->
@@ -157,9 +177,9 @@ $fnacimiento = $resultado_cliente[0]['fnacimiento'];
             <!-- Website URL -->
             
             <fieldset id="botones">
-              <input type="button" class="Btn cancel" value="Cancelar"  onclick = "location.href = './pagina_cliente.php'"/>
+              <input type="button" class="Btn cancel" value="Cancelar"  onclick = "location.href = '../../../pagina_cliente.php'"/>
               <input type="submit" class="Btn" value="Guardar Cambios" />
-              <input type="button" class="Btn" value="Eliminar Cuenta" onclick = "location.href = './assets/php/usuarios/eliminarUsuario.php?<?php echo $row['cedula']?>'"/>    
+              <input type="button" class="Btn" value="Eliminar Cuenta" onclick = "location.href = '../usuarios/eliminarUsuario.php?<?php echo $row['cedula']?>'"/>    
             </fieldset>
 
           <?php } ?>
@@ -197,6 +217,10 @@ $fnacimiento = $resultado_cliente[0]['fnacimiento'];
     </footer>
 
     <script src="./assets/js/validarDatosEditar.js"></script>
+    <script src="../../js/paginaCliente.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
 </html>
 

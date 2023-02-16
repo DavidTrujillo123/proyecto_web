@@ -31,8 +31,7 @@ if($bandera){
 }else{
    echo ("
       <script>
-      alert('Gil');
-      window.location = '../../../editarUsuario.php';
+      window.location = '../P_cliente/editarUsuario.php';
       </script>'");
 }
 ?>

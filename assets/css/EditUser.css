@@ -16,6 +16,7 @@ body{
     flex-direction: column;
     min-height: 100vh;
 }
+
 .profile,.content{
     color: white;
     -webkit-transition: 0.5s ease;
@@ -23,6 +24,7 @@ body{
     transition: 0.5s ease;
 }
 .profile{
+  margin-top: 150px !important;
   position: relative;
   top: 25px;
   bottom: auto;

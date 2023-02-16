@@ -8,7 +8,7 @@
         <h2 class="section-title">La Lico Store</h2>
 
         <div class="header-action">
-            <button class="header-action-btn" aria-label="user" onclick="location.href='../../../editarUsuario.php'">
+            <button class="header-action-btn" aria-label="user" onclick="location.href='#'">
 
                 <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
             </button>
