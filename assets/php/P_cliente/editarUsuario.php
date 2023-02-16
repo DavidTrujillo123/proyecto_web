@@ -16,7 +16,7 @@ if (!isset($_SESSION['usuario'])) { //Si no existe una sesión activa
 $usuario = $_SESSION['usuario']; //asigna la sesión al usuario
 $db = new Conexion();
 
-$sql = "SELECT * FROM usuario WHERE usuario LIKE '$usuario'";
+$sql = "SELECT * FROM usuario WHERE usuario LIKE '$usuario' or email LIKE '$usuario'";
 $resultado_usuario  = $db->Read($sql);
 $cedula = $resultado_usuario[0]['cedula'];
 
@@ -63,7 +63,7 @@ $fnacimiento = $resultado_cliente[0]['fnacimiento'];
 
 </head>
 <body>  
-    <?php include('../../../footer_nav_cliente/nav_clientes.php');?>
+  <?php include('../../../footer_nav_cliente/nav_clientes.php');?>
     <div class="profile">
         <div class="content">
           <h1>Editar Perfil</h1>
@@ -188,12 +188,12 @@ $fnacimiento = $resultado_cliente[0]['fnacimiento'];
       </div>
 
       <!--Footer-->
-      <footer id="foot">
+      <!-- <footer id="foot">
         <div class="grupo-1">
             <div class="box">
                 <figure>
                     <a href="#">
-                        <img src="./assets/images/logo2.png" alt="Logo de La Lico">
+                        <img src="../../../assets/images/logo2.png" alt="Logo de La Lico">
                     </a>
                 </figure>
             </div>
@@ -214,9 +214,10 @@ $fnacimiento = $resultado_cliente[0]['fnacimiento'];
         <div class="grupo-2">
             <small> &copy; 2023 <b>La Lico</b> - Todos los Derechos Reservados</small>
         </div>
-    </footer>
+    </footer> -->
+    <?php include('../../../footer_nav_cliente/footer.php');?>
 
-    <script src="./assets/js/validarDatosEditar.js"></script>
+    <script src="../../js/validarDatosEditar.js"></script>
     <script src="../../js/paginaCliente.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
