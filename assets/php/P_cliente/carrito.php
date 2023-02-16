@@ -29,18 +29,18 @@ $cart = $db->Read($sql_carrito);
 $id_carrito = $cart[0]['id_carrito'];
 
 
-if (isset($_GET['agregar'])) {
+if (isset($_GET['agregar'])) {//Comprueba si la variable existe al mandar el codigo del producto 
     $sql2 = "SELECT * FROM `carrito_item` WHERE carrito_item.id_carrito=$id_carrito AND carrito_item.codigo_producto=$_GET[agregar]";
     $res = $db->OperSql($sql2);
     $num_productos = $res->num_rows;
-    if ($num_productos == 0) {
+    if ($num_productos == 0) {//Comprueba que no este ingresado ni una vez para no repetir el producto  
         $sql = "INSERT INTO 
     carrito_item(id_carrito_item, id_carrito, codigo_producto, cantidad_cliente, subtotal)
-     VALUES (null,'$id_carrito',$_GET[agregar],'1',(SELECT precio FROM producto WHERE codigo_producto=$_GET[agregar])*1);";
+     VALUES (null,'$id_carrito',$_GET[agregar],'1',(SELECT precio FROM producto WHERE codigo_producto=$_GET[agregar])*1);";//Agrega una vez 
         $prod_carrito = $db->OperSql($sql);
     } else {
         $fila = mysqli_fetch_array($res);
-        $cantidad = $fila['cantidad_cliente'] + 1;
+        $cantidad = $fila['cantidad_cliente'] + 1;//Si el producto ya esta en carrito se agrega una vez mas 
         $sql = "UPDATE carrito_item SET carrito_item.cantidad_cliente=$cantidad , carrito_item.subtotal=(SELECT precio FROM producto WHERE codigo_producto=$_GET[agregar])*$cantidad WHERE carrito_item.codigo_producto=$_GET[agregar] AND carrito_item.id_carrito=$id_carrito";
         $prod_carrito = $db->OperSql($sql);
     }
@@ -49,13 +49,17 @@ if (isset($_GET['agregar'])) {
 
     </script> ");
 }
-if (isset($_POST['id1'])) {
+if (isset($_POST['id1'])) { //comprueba la cantidad que envia el cliente exista 
 
     $sql1 = "SELECT cantidad FROM producto WHERE codigo_producto= $_POST[id1] ";
     $cantidad = $db->Read($sql1);
     $cantidadUnit = $cantidad[0]['cantidad'];
-    if ($_POST['cantidad'] <= $cantidadUnit) {
-        $sql = "UPDATE carrito_item SET carrito_item.cantidad_cliente=$_POST[cantidad] , carrito_item.subtotal=(SELECT precio FROM producto WHERE codigo_producto=$_POST[id1])*$_POST[cantidad] WHERE carrito_item.codigo_producto=$_POST[id1] AND carrito_item.id_carrito=$id_carrito";
+    if ($_POST['cantidad'] <= $cantidadUnit) {//comprueba que la cantidad que envia el cliente sea menor que la cantidad que hay en stock
+        //Actualiza la cantidad
+
+        $sql = "UPDATE carrito_item SET carrito_item.cantidad_cliente=$_POST[cantidad] , 
+        carrito_item.subtotal=(SELECT precio FROM producto WHERE codigo_producto=$_POST[id1])*$_POST[cantidad] 
+        WHERE carrito_item.codigo_producto=$_POST[id1] AND carrito_item.id_carrito=$id_carrito";
         $prod_carrito = $db->OperSql($sql);
     } else {
         echo ("<script> 
@@ -63,7 +67,7 @@ if (isset($_POST['id1'])) {
     </script> ");
     }
 }
-if (isset($_GET['eliminar'])) {
+if (isset($_GET['eliminar'])) {//comprueba la accion del eliminar la ejecuta 
     $sql = "DELETE FROM `carrito_item` WHERE carrito_item.id_carrito_item=$_GET[eliminar]";
     $eliminar_prod = $db->OperSql($sql);
 }
@@ -120,13 +124,14 @@ if (isset($_GET['eliminar'])) {
         <?php
         $sql = "SELECT * FROM `producto`";
         $productos = $db->OperSql($sql);
+        //Selecciona todos los datos que necesitamos para el carrito 
 
         $sql2 = "SELECT * FROM producto,carrito_item,carrito WHERE carrito_item.id_carrito=carrito.id_carrito 
         AND producto.codigo_producto=carrito_item.codigo_producto AND carrito.id_usuario=$id_usuario ";
       
         $carrito = $db->OperSql($sql2);
         foreach ($carrito as $row) {
-            $Total = $Total + $row['subtotal'];
+            $Total = $Total + $row['subtotal'];//calcula el total
 
 
 
@@ -182,7 +187,7 @@ if (isset($_GET['eliminar'])) {
 <script src="../../js/paginaCliente.js" defer></script>
 
 <script>
-    function eliminar(id) {
+    function eliminar(id) {//funcion propia para eliminar de javascript
         if (confirm("Deseas Eliminar del Carrito ")) {
             window.location = "carrito.php?eliminar=" + id;
         }
