@@ -242,7 +242,7 @@ $num_productos = $res->num_rows;
           <div class="about-card">
             <figure class="card-banner img-holder" style="--width: 1170; --height: 500;">
 
-              <video src="./assets/images/lalicovideo.mp4" poster="presentacion.jpg" width="1170" height="500" loading="lazy" alt="Woodex promo" class="img-cover" controls></video>
+              <video src="./assets/images/lalicovideo.mp4" poster="presentacion.jpg" width="1170" height="500" loading="lazy" alt="Woodex promo" class="img-cover" autoplay controls></video>
 
             </figure>
 
