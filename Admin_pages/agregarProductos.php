@@ -9,7 +9,7 @@
     <script src="../assets/js/operacionesAdmin/admin_cliente.js"></script>
     <script src="../assets/js/operacionesAdmin/admin_producto.js"></script>
     <script src="../assets/js/operacionesAdmin/openPage.js"></script>
-    <title>Document1</title>
+    <title>Admin - Agregar Productos</title>
 </head>
 <body>
     <?php include './nav_footer_admin/nav.php'; ?>

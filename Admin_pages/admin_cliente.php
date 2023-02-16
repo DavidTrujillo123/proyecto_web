@@ -34,7 +34,7 @@ $k = 0;
     <link rel="stylesheet" href="../assets/css/admin.css">
     <script src="../assets/js/operacionesAdmin/admin_cliente.js"></script>
     <script src="../assets/js/operacionesAdmin/openPage.js"></script>
-    <title>Document</title>
+    <title>Admin - Cliente</title>
 </head>
 
 <body>
