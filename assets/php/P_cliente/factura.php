@@ -30,6 +30,7 @@ $cliente = $db->Read($sql);
 $nombres = $cliente[0]['nombre'] . ' ' . $cliente[0]['apellido'];
 $direccion=$cliente[0]['direccion'];
 $Total=0;
+$echa=date("d/m/y");
 $RestarCantidad=0;
 
 $sql = "SELECT * FROM producto,carrito_item,carrito WHERE carrito_item.id_carrito=carrito.id_carrito 
@@ -79,7 +80,7 @@ while($fila=$resultado->fetch_assoc()){
       
    $operaciones=$db->OperSql($sql2);
    //Crear nuevo carrito
-    
+    $numeroFactura+=01;
 
 }
 
