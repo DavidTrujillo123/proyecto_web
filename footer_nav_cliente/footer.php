@@ -1,4 +1,4 @@
-<footer class="footer">
+<!-- <footer class="footer">
     <div class="container">
 
       <div class="footer-top section">
@@ -99,27 +99,7 @@
 
         </ul>
 
-        <div class="footer-list">
-
-          <p class="footer-list-title">Newsletter</p>
-
-          <form action="" class="footer-form">
-            <input type="email" name="email_address" placeholder="Your email address" required class="email-field">
-
-            <button type="submit" class="footer-form-btn">
-              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-            </button>
-          </form>
-
-          <div class="wrapper">
-
-            <a href="#" class="footer-link">Term & Condition</a>
-            <a href="#" class="footer-link">Policy</a>
-            <a href="#" class="footer-link">Map</a>
-
-          </div>
-
-        </div>
+       
 
       </div>
 
@@ -132,4 +112,34 @@
       </div>
 
     </div>
-  </footer>
+  </footer> -->
+
+    <!--Iconos-->
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script> 
+<footer id="foot">
+  <div class="grupo-1">
+    <div class="box">
+      <figure>
+        <a href="#">
+          <img src="../../../assets/images/logo2.png" alt="Logo de La Lico">
+        </a>
+      </figure>
+    </div>
+    <div class="box">
+      <h2>SOBRE NOSOTROS</h2>
+      <p>La Lico es una licorería dedicado a brindar a sus clientes una amplia variedad de bebidas alcohólicas de alta calidad a precios competitivos.</p>
+
+    </div>
+    <div class="box">
+      <h2>SÍGUENOS</h2>
+      <div class="red-social">
+        <a href="https://www.facebook.com/lalicolicoresibarra" class="fa fa-facebook" target="_blank"></a>
+        <a href="https://www.instagram.com/lalicocruzverde/" class="fa fa-instagram" target="_blank"></a>
+        <a href="https://wa.me/593961971500" class="fa fa-whatsapp" target="_blank"></a>
+      </div>
+    </div>
+  </div>
+  <div class="grupo-2">
+    <small> &copy; 2023 <b>La Lico</b> - Todos los Derechos Reservados</small>
+  </div>
+</footer>

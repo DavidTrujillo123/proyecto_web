@@ -20,7 +20,7 @@ var expresiones = {
 	nombre: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, // Letras y espacios, pueden llevar acentos.
 	contraseña: /^[a-zñA-ZÑ0-9]{8,12}$/, // 8 a 12 caracteres con mayusculas y minusculas
 	correo: /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/,
-    direccion: /^[A-ZÁÉÍÓÚÑ][A-Za-zÁÉÍÓÚáéíóúñÑ0-9,.\s]{5,16}$/ //letras, números, punto y comas
+    direccion: /^[A-ZÁÉÍÓÚÑ][A-Za-zÁÉÍÓÚáéíóúñÑ0-9,.\s]{3,16}$/ //letras, números, punto y comas
 
 }
 

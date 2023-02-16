@@ -80,6 +80,7 @@ if (isset($_GET['eliminar'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito</title>
     <link rel="stylesheet" href="../../css/estilo_paginaCliente.css">
+    <link rel="stylesheet" href="../../css/CssFooter.css">
     <link rel="shortcut icon" href="./assets/css/favicon.svg" type="image/svg+xml">
 
     <!-- 

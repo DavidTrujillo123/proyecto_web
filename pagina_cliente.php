@@ -62,7 +62,7 @@ $num_productos = $res->num_rows;
   -->
   <link rel="stylesheet" href="./assets/css/estilo_paginaCliente.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
+  <link rel="stylesheet" href="./assets/css/CssFooter.css">
 
   <!-- 
     - google font link
@@ -73,7 +73,8 @@ $num_productos = $res->num_rows;
 
 
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
-
+  <!--Iconos Footer-->
+  <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script> 
 </head>
 
 <body id="top">
@@ -93,7 +94,7 @@ $num_productos = $res->num_rows;
 
       <div class="header-action">
 
-        <button class="header-action-btn" aria-label="user" onclick="location.href='./assets/php/P_cliente/editarUsuario.php'" >
+        <button class="header-action-btn" aria-label="user" onclick="location.href='./assets/php/P_cliente/editarUsuario.php'">
           <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
         </button>
 
@@ -288,9 +289,9 @@ $num_productos = $res->num_rows;
                         $cantidad = $db->Read($sql1);
                         $cantidadUnit = $cantidad[0]['cantidad'];
                         if ($cantidadUnit > 0) {
-                            
+
                         ?>
-                          <button onclick="location.href='./assets/php/P_cliente/carrito.php?agregar=<?php echo print_r($row['codigo_producto'],true) ?>'" class="card-action-btn" aria-label="add to cart" title="añadir al carrito">
+                          <button onclick="location.href='./assets/php/P_cliente/carrito.php?agregar=<?php echo print_r($row['codigo_producto'], true) ?>'" class="card-action-btn" aria-label="add to cart" title="añadir al carrito">
                             <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
                           </button>
                         <?php } else { ?>
@@ -337,23 +338,6 @@ $num_productos = $res->num_rows;
       </section>
 
 
-
-
-
-
-
-
-
-
-
-      <!-- 
-    - #FOOTER
-  -->
-
-      <?php
-      include("./footer_nav_cliente/footer.php");
-      ?>
-
       <!-- 
     - #BACK TO TOP
   -->
@@ -380,6 +364,34 @@ $num_productos = $res->num_rows;
       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+      <!--FOOTER-->
+      <footer id="foot">
+        <div class="grupo-1">
+          <div class="box">
+            <figure>
+              <a href="#">
+                <img src="./assets/images/logo2.png" alt="Logo de La Lico">
+              </a>
+            </figure>
+          </div>
+          <div class="box">
+            <h2>SOBRE NOSOTROS</h2>
+            <p>La Lico es una licorería dedicado a brindar a sus clientes una amplia variedad de bebidas alcohólicas de alta calidad a precios competitivos.</p>
+
+          </div>
+          <div class="box">
+            <h2>SÍGUENOS</h2>
+            <div class="red-social">
+              <a href="https://www.facebook.com/lalicolicoresibarra" class="fa fa-facebook" target="_blank"></a>
+              <a href="https://www.instagram.com/lalicocruzverde/" class="fa fa-instagram" target="_blank"></a>
+              <a href="https://wa.me/593961971500" class="fa fa-whatsapp" target="_blank"></a>
+            </div>
+          </div>
+        </div>
+        <div class="grupo-2">
+          <small> &copy; 2023 <b>La Lico</b> - Todos los Derechos Reservados</small>
+        </div>
+      </footer>
 </body>
 
 </html>

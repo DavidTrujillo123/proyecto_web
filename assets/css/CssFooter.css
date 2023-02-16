@@ -1,0 +1,76 @@
+/*FOOTER------------------------------------------*/
+#foot{
+    width: 100%;
+    background-color: #0a141daf;
+    margin-top: auto;
+}
+#foot .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 20px 0px;
+}
+#foot .grupo-1 .box figure{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#foot .grupo-1 .box figure img{
+    padding-top: 40px;
+    width: 135px;
+    height: 135px;
+}
+#foot .grupo-1 .box h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+#foot .grupo-1 .box p{
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+#foot .grupo-1 .red-social a{
+    text-decoration: none;
+    width: 80px;
+    height: 80px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 2px;
+    /*background-color: #0d203393;*/
+    text-align: center;
+    transition: all 0.3s ease;
+}
+#foot .grupo-1 .red-social a:hover{
+    color: rgb(0, 163, 147);
+    transform: scale(1.4);
+}
+#foot .grupo-2{
+    background-color: #0a1a2a;
+    padding: 15px 10px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    
+}
+#foot .grupo-2 small{
+    font-size: 15px;
+}
+
+@media screen and (max-width: 850px){
+
+    main{
+        margin-top: 50px;
+    }
+
+    /*Footer*/
+    #foot .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+}

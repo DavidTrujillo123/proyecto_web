@@ -56,8 +56,7 @@ $fnacimiento = $resultado_cliente[0]['fnacimiento'];
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <!-- <link rel="stylesheet" href="../../css/tabla.css" /> -->
-    <!--Iconos-->
-    <!-- <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script> -->
+
 
     <title>Editar Perfil</title>
 
