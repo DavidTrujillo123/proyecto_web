@@ -337,9 +337,11 @@ formulario_register.addEventListener('submit',(e) =>{
         }
         else{  
             if(campos.usernamer && campos.nombresr && campos.apellidosr && campos.correoe && campos.contrasenia && terminos.checked && campos.cedular && campos.direccionr && campos.repeatContrasenia){
-                
-                if(usernamer.value == /^A\d+$/){
-                    let bandera = prompt("Digite el codigo de seguridad proporcionado por su supervisor","");
+                let usuario = document.getElementById("usernamer").value;
+                const ex_regular =  /^A\d+$/;
+                console.log(ex_regular.test(usuario));
+                if(ex_regular.test(usernamer.value)){
+                    let bandera = prompt("Digite el codigo de seguridad proporcionado por su supervisor");
                     if(bandera == "1234"){
                         formulario_register.submit();
                         inputs_registro.forEach((input) =>{
