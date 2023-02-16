@@ -99,7 +99,7 @@ while($fila=$resultado->fetch_assoc()){
    $id_cliente=$fila['id_carrito'];
 
      
-   $sql2="UPDATE producto SET cantidad = $RestarCantidad WHERE codigo_producto = $codigo";
+   $sql2="UPDATE producto SET cantidad = $RestarCantidad WHERE codigo_producto = '$codigo'";
  
       
    $operaciones=$db->OperSql($sql2);
@@ -122,7 +122,8 @@ VALUES (null,'$id_carrito','$numeroFactura','$fecha','$Total','$TotalCompra')";
 
 $sql="INSERT INTO `carrito`(`id_carrito`, `id_usuario`) VALUES (null,$id_usuario)";
 $opera=$db->OperSql($sql);
-  $PDF->Ln(10);
+
+$PDF->Ln(10);
 
 $PDF->SetX(135);$PDF->Cell(20,5,'Subtotal:',0,0,'R');
 $PDF->Cell(40,5,'$'.$Total,0,1,'R');

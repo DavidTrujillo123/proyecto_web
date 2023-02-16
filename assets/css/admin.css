@@ -23,6 +23,8 @@ h2 {
   font-size: 46px;
   line-height: 54px;
   color: #222;
+  margin-top: 2em;
+  
 }
 
 h4 {
@@ -89,7 +91,8 @@ main h1{
     transition: 0.3s ease;
 }
 #navbar li a:hover,
-#navbar li a.active {
+#navbar li a.active
+{
     color:red;
 }
 #navbar li a.active::after,
