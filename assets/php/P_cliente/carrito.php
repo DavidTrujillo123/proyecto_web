@@ -88,6 +88,7 @@ if (isset($_POST['id1'])) { //comprueba la cantidad que envia el cliente exista
     } else {
         echo ("<script> 
                 alert('Cantidad Insuficiente en stock !');
+                window.location.href = './carrito.php';
             </script> ");
     }
 }
@@ -192,8 +193,9 @@ if (isset($_GET['eliminar'])) {//comprueba la accion del eliminar la ejecuta
             <td></td>
             <td></td>
             <td><?php echo $Total ?></td>
-            <td><a href=""><button id="compra" onclick="comprar()">Comprar ahora         
-            </button></a></td>
+            <!-- <td><a href=""><button id="compra" onclick="comprar()">Comprar ahora         
+            </button></a></td> -->
+            <td><button onclick="comprar()">aaa</button></td>
         </tr>
       
     </table>
@@ -228,8 +230,11 @@ if (isset($_GET['eliminar'])) {//comprueba la accion del eliminar la ejecuta
 <script>
     function comprar() {
         if (confirm("¿Estás seguro de que quiere realizar esta comprar?")) {
-            window.open('./factura.php');
+            window.open("./factura.php") ;  
+            
         }
+        
+
     }
 
 </script>
