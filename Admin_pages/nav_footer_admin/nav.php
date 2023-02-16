@@ -12,7 +12,7 @@
                     <li><a href="../Admin_pages/inventario.php">Inventario</a></li>
                 </ul>
             </li>
-             <li><a href="../Admin_pages/admin_cliente.php">Clientes</a></li>
+             <li><a href="../Admin_pages/admin_cliente.php">Usuarios</a></li>
              <li><a href="../assets/php/CerrarSesion.php">Cerrar sesión</a></li>
              <li><a href="#"><i class="far fa-shopping-bag"></i></a></li>
          </ul>

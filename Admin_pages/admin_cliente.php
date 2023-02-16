@@ -33,7 +33,6 @@ $k = 0;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/admin.css">
     <script src="../assets/js/operacionesAdmin/admin_cliente.js"></script>
-    <script src="../assets/js/operacionesAdmin/admin_producto.js"></script>
     <script src="../assets/js/operacionesAdmin/openPage.js"></script>
     <title>Document</title>
 </head>
@@ -43,9 +42,9 @@ $k = 0;
     <main id="principal">
         <h1>Usuarios</h1>
         <div id="tablas">
-            <h3>Buscar:</h3>
-            <input>
-            <button>Buscar</button>
+            <!-- <h3>Buscar:</h3>
+            <input> -->
+            <!-- <button>Buscar</button> -->
             <table id="tabla_admin">
                 <h2>Administradores</h2>
                 <tr>
@@ -104,7 +103,7 @@ $k = 0;
                     </tr>
                 <?php } ?>
             </table>
-            <button onclick=(Actualizar())>Actualizar</button>
+            <!-- <button onclick=(Actualizar())>Actualizar</button> -->
         </div>
     </main>
     <?php include("./nav_footer_admin/footer.php"); ?>
