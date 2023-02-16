@@ -154,13 +154,15 @@ if (isset($_GET['eliminar'])) {
                 ';
         }
         ?>
+       
         <tr>
             <td><h2>Total:</h2></td>
             <td></td>
             <td></td>
             <td></td>
             <td><?php echo $Total ?></td>
-            <td><a href="pago.php"><button id="compra">Comprar ahora</button></a></td>
+            <td><a href=""><button id="compra" onclick="comprar()">Comprar ahora         
+            </button></a></td>
         </tr>
       
     </table>
@@ -185,11 +187,22 @@ if (isset($_GET['eliminar'])) {
     function eliminar(id) {
         if (confirm("Deseas Eliminar del Carrito ")) {
             window.location = "carrito.php?eliminar=" + id;
+
         }
 
 
     }
 </script>
+
+<script>
+    function comprar() {
+        if (confirm("¿Estás seguro de que quiere realizar esta comprar?")) {
+            window.open('./factura.php');
+        }
+    }
+
+</script>
+
    <!-- 
     - ionicon link
   -->
