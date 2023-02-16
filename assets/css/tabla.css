@@ -1,0 +1,39 @@
+
+img{
+    display: flex;
+    padding: auto;
+    height: 90px;
+    width: 400x
+}
+table {
+
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  
+  }
+  th{
+    background-color: #ff2929;
+    font-size: x-large;
+
+  }
+  td, th {
+ 
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  
+    padding: 10px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  tr:hover {background-color: rgb(205, 181, 181);}
+  #tabla{
+    padding-top: 110px;
+    padding-bottom: 12px;
+   
+  }
+button:hover
+  {background-color: rgb(254, 5, 5);
+  }
