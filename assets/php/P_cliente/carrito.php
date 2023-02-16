@@ -142,7 +142,7 @@ if (isset($_GET['eliminar'])) {
                     
                     </td>
                     <td>' . $row['subtotal'] . '</td>
-                    <td><input type="submit" value="Actualizar" ><a href="#" onclick="eliminar(' . $row['id_carrito_item'] . ')">Eliminar</td>
+                    <td><input type="submit" value="✏️" ><a href="#" onclick="eliminar(' . $row['id_carrito_item'] . ')">🗑️</td>
                     
 
 
