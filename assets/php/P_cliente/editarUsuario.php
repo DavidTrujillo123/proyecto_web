@@ -193,7 +193,7 @@ $fnacimiento = $resultado_cliente[0]['fnacimiento'];
             <div class="box">
                 <figure>
                     <a href="#">
-                        <img src="./assets/images/logo2.png" alt="Logo de La Lico">
+                        <img src="../../../assets/images/logo2.png" alt="Logo de La Lico">
                     </a>
                 </figure>
             </div>
@@ -216,7 +216,7 @@ $fnacimiento = $resultado_cliente[0]['fnacimiento'];
         </div>
     </footer>
 
-    <script src="./assets/js/validarDatosEditar.js"></script>
+    <script src="../../js/validarDatosEditar.js"></script>
     <script src="../../js/paginaCliente.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
