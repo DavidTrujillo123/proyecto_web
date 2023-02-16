@@ -96,7 +96,7 @@ while($fila=$resultado->fetch_assoc()){
 
 }
 
-$IVA=0.11*$Total;
+$IVA=0.12*$Total;
 $TotalCompra=$IVA+$Total;
 
 //Insertar factura
