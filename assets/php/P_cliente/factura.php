@@ -30,9 +30,20 @@ $cliente = $db->Read($sql);
 $nombres = $cliente[0]['nombre'] . ' ' . $cliente[0]['apellido'];
 $direccion=$cliente[0]['direccion'];
 $Total=0;
-$echa=date("d/m/y");
+$numeroFactura=0;
+$fecha=date("y/m/d");
 $RestarCantidad=0;
+//busca el id del carrito 
 
+$sql_carrito = "SELECT id_carrito FROM carrito WHERE carrito.id_usuario=$id_usuario";
+$cart = $db->Read($sql_carrito);
+$car1 = $db->OperSql($sql_carrito);//obtener las filas del carrito
+$nrows = $car1->num_rows;
+$nrows = $nrows-1;	//ultima fila del carrito
+$id_carrito = $cart[$nrows]['id_carrito'];
+
+
+//Buscamos los
 $sql = "SELECT * FROM producto,carrito_item,carrito WHERE carrito_item.id_carrito=carrito.id_carrito 
         AND producto.codigo_producto=carrito_item.codigo_producto AND carrito.id_usuario=$id_usuario ";
 
@@ -44,7 +55,7 @@ $PDF->AliasNbPages();
 $PDF->SetMargins(15,15,15);
 $PDF->AddPage();
 
-//Cliennete
+//Cliente
 
 $PDF->SetFillColor(225);
 $PDF->SetFont('Arial','B',14);
@@ -73,29 +84,30 @@ while($fila=$resultado->fetch_assoc()){
    //Actualizar cantidad productos
    $RestarCantidad=$fila['cantidad'] - $fila['cantidad_cliente'];
     $codigo=$fila['codigo_producto'];
- 
+   $id_cliente=$fila['id_carrito'];
+
      
    $sql2="UPDATE producto SET cantidad = $RestarCantidad WHERE codigo_producto = $codigo";
  
       
    $operaciones=$db->OperSql($sql2);
-   //Crear nuevo carrito
-<<<<<<< Updated upstream
-    $numeroFactura+=01;
-=======
-  $eliminar=$fila['id_carrito'] ;
-
-   $sql="DELETE FROM carrito_item WHERE id_carrito =$eliminar ";
+ 
    
-   $operaciones=$db->OperSql($sql);
->>>>>>> Stashed changes
 
 }
 
 $IVA=0.11*$Total;
 $TotalCompra=$IVA+$Total;
 
-$PDF->Ln(10);
+//Insertar factura
+$sql3="INSERT INTO factura(id_factura,id_carrito,Nfactura, fecha_compra, subtotal, total) 
+VALUES (null,'$id_carrito','$numeroFactura','$fecha','$Total','$TotalCompra')";
+  $opera=$db->OperSql($sql3);
+//Crear Carrito
+
+$sql="INSERT INTO `carrito`(`id_carrito`, `id_usuario`) VALUES (null,$id_usuario)";
+$opera=$db->OperSql($sql);
+  $PDF->Ln(10);
 
 $PDF->SetX(135);$PDF->Cell(20,5,'Subtotal:',0,0,'R');
 $PDF->Cell(40,5,'$'.$Total,0,1,'R');

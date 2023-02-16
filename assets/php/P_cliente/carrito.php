@@ -1,10 +1,4 @@
 <?php
-include("../Conexion.php");
-$db = new Conexion();
-$sql = "SELECT * FROM `cliente`";
-$res = $db->OperSql($sql);
-$num_clientes = $res->num_rows;//numero de clientes
-$Total=0;
 session_start();
 if (!isset($_SESSION['usuario'])) { //Si no existe una sesión activa
     echo '
@@ -17,6 +11,13 @@ if (!isset($_SESSION['usuario'])) { //Si no existe una sesión activa
     die();
 }
 
+include("../Conexion.php");
+$db = new Conexion();
+$sql = "SELECT * FROM `cliente`";
+$res = $db->OperSql($sql);
+$num_clientes = $res->num_rows;//numero de clientes
+$Total=0;
+
 $usuario = $_SESSION['usuario']; //asigna la sesión al usuario
 $db = new Conexion();
 //busca el id del usuario , sea con el nombre de usuario o email en la tabla usuario
@@ -26,7 +27,10 @@ $id_usuario = $cliente[0]['id_usuario'];
 //busca el id del carrito 
 $sql_carrito = "SELECT id_carrito FROM carrito WHERE carrito.id_usuario=$id_usuario";
 $cart = $db->Read($sql_carrito);
-$id_carrito = $cart[0]['id_carrito'];
+$car1 = $db->OperSql($sql_carrito);//obtener las filas del carrito
+$nrows = $car1->num_rows;
+$nrows = $nrows-1;	//ultima fila del carrito
+$id_carrito = $cart[$nrows]['id_carrito'];
 
 
 if (isset($_GET['agregar'])) {//Comprueba si la variable existe al mandar el codigo del producto 
