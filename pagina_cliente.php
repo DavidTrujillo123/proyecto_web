@@ -24,16 +24,18 @@ $sql = "SELECT nombre, apellido FROM cliente WHERE cedula = '$cedula'";
 $cliente = $db->Read($sql);
 $nombres = $cliente[0]['nombre'] . ' ' . $cliente[0]['apellido']; //guarda los datos en una variable
 
-$sql = "SELECT * FROM `producto`";
+$sql = "SELECT * FROM `producto`";//selecciona todos los productos
+
 $productos = $db->OperSql($sql);
 
-$sql1 = "SELECT id_usuario FROM usuario WHERE usuario= '$usuario' or email='$usuario'";
+$sql1 = "SELECT id_usuario FROM usuario WHERE usuario= '$usuario' or email='$usuario'";//selecciona el id usuario
 $usuario1 = $db->Read($sql1);
 $id_usuario = $usuario1[0]['id_usuario'];
 
 $sql = "SELECT * FROM carrito_item, carrito WHERE carrito_item.id_carrito=carrito.id_carrito AND carrito.id_usuario=$id_usuario ";
 $res = $db->OperSql($sql);
-$num_productos = $res->num_rows;
+$num_productos = $res->num_rows;//numero de productos para el boton del carro que se agregaron
+
 
 ?>
 

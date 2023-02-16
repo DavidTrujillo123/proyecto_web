@@ -30,6 +30,7 @@ $cliente = $db->Read($sql);
 $nombres = $cliente[0]['nombre'] . ' ' . $cliente[0]['apellido'];
 $direccion=$cliente[0]['direccion'];
 $Total=0;
+$echa=date("d/m/y");
 $RestarCantidad=0;
 
 $sql = "SELECT * FROM producto,carrito_item,carrito WHERE carrito_item.id_carrito=carrito.id_carrito 
@@ -66,7 +67,7 @@ while($fila=$resultado->fetch_assoc()){
     $PDF->Cell(20,5,$fila['cantidad_cliente'],1,0,'C');
     $PDF->Cell(75,5,$fila['nombre_producto'],1,0,'C');
     $PDF->Cell(45,5,$fila['precio'],1,0,'L');
-    $PDF->Cell(40,5,$fila['subtotal'],1,1,'L');
+    $PDF->Cell(40,5,$fila['subtotal'],1,1,'R');
    //  $PDF->Cell(40,5,$fila[''],1,1,'C');
 
    //Actualizar cantidad productos
@@ -79,16 +80,29 @@ while($fila=$resultado->fetch_assoc()){
       
    $operaciones=$db->OperSql($sql2);
    //Crear nuevo carrito
-    
+<<<<<<< Updated upstream
+    $numeroFactura+=01;
+=======
+  $eliminar=$fila['id_carrito'] ;
+
+   $sql="DELETE FROM carrito_item WHERE id_carrito =$eliminar ";
+   
+   $operaciones=$db->OperSql($sql);
+>>>>>>> Stashed changes
 
 }
 
-
-$IVA=0.12*$Total;
+$IVA=0.11*$Total;
 $TotalCompra=$IVA+$Total;
 
 $PDF->Ln(10);
-$PDF->Cell(50,15,'Subtotal:$'.$Total,1,1,'L');
-$PDF->Cell(50,15,'IVA:$'.$IVA,1,1,'L');
-$PDF->Cell(50,15,'Total:$'.$TotalCompra,1,0,'L');
+
+$PDF->SetX(135);$PDF->Cell(20,5,'Subtotal:',0,0,'R');
+$PDF->Cell(40,5,'$'.$Total,0,1,'R');
+$PDF->SetX(135);$PDF->Cell(20,5,'I.V.A. 12%:',0,0,'R');
+$PDF->Cell(40,5,'$'.$IVA,0,1,'R');
+$PDF->SetFont("Arial", "B", 13);
+$PDF->SetX(135); $PDF->Cell(20,15,'TOTAL:',0,0,'R');
+$PDF->SetFont("Arial", "", 13);
+$PDF->Cell(40,15,'$'.$TotalCompra,0,1,'R');
 $PDF->Output();
