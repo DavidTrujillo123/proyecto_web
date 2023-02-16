@@ -205,7 +205,7 @@ body {
   background-image: url(../images/multimedia/vino.jpg);
 }
 #banner3 .banner-box3{
-  background-image: url(../images/multimedia/conac\ \(1\).jpg);
+  background-image: url(../images/multimedia/conac.jpg);
 }
 
 
@@ -540,4 +540,43 @@ footer .install img {
   #lg-bag {
     display: none;
   }
+  #hero{
+    height: 70vh;
+    padding: 0 80px;
+    background-position: top 30% right 30%;
+    
+
+  }
+  #hero h4 {
+    font-size: 10px;
+    
+  }
+  h2 {
+    font-size: 32px; 
+    
+  }
+  h1 {
+    font-size: 36px;
+  
+ 
+  }
+  #hero p {
+    
+    font-size: 10px;    
+    
+  }
+  
+
+  #sm-banner .banner-box{
+    min-width: 100%;
+    height: 30vh;
+  }
+  #banner3{
+    padding: 0 40px;
+
+  }
+  #banner3 .banner-box{
+    width: 28%;
+  }
+
 }
