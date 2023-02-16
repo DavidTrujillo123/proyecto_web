@@ -12,6 +12,7 @@ var campos ={
     cedular: false,
     direccionr: false,
     contrasenia: false,
+    respuesta:false,
     repeatContrasenia: false,
     correoe: false
 }
@@ -21,7 +22,7 @@ var expresiones = {
 	nombre: /^[A-Z][a-zA-ZÀ-ÿ\s]{3,40}$/, // Letras y espacios, pueden llevar acentos.
 	contraseña: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}$/, // 8 caracteres con mayusculas y minusculas
 	correo: /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/,
-    direccion: /^[a-zA-Z0-9À-ÿ\s\.\-]{6,16}$/ //letras, números, punto y guion
+    direccion: /^[A-ZÁÉÍÓÚÑ][A-Za-zÁÉÍÓÚáéíóúñÑ0-9,.\s]{3,16}$/  //letras, números, punto y guion
 
 }
 
@@ -50,6 +51,10 @@ const validarFormulario = (e) =>{
 
         case "direccion":
             validarCampo(expresiones.direccion, e.target, 'direccionr');
+        break;
+
+        case "respuesta":
+            validarCampo(expresiones.direccion, e.target, 'respuesta');
         break;
 
         case "password":
