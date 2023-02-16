@@ -188,7 +188,7 @@ $fnacimiento = $resultado_cliente[0]['fnacimiento'];
       </div>
 
       <!--Footer-->
-      <footer id="foot">
+      <!-- <footer id="foot">
         <div class="grupo-1">
             <div class="box">
                 <figure>
@@ -214,7 +214,8 @@ $fnacimiento = $resultado_cliente[0]['fnacimiento'];
         <div class="grupo-2">
             <small> &copy; 2023 <b>La Lico</b> - Todos los Derechos Reservados</small>
         </div>
-    </footer>
+    </footer> -->
+    <?php include('../../../footer_nav_cliente/footer.php');?>
 
     <script src="../../js/validarDatosEditar.js"></script>
     <script src="../../js/paginaCliente.js" defer></script>
