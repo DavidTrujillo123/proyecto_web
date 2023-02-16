@@ -46,7 +46,7 @@ $num_productos = $res->num_rows;//numero de productos para el boton del carro qu
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">

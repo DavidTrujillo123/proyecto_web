@@ -25,7 +25,7 @@ foreach ($data as $row) {
 $k = 0;
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">

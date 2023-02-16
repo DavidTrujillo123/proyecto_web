@@ -39,7 +39,7 @@ VerficarData($data);
 
 //Update en la tabla usuario
 $sql = "UPDATE `usuario` 
-        SET `cedula`=$cedula,`email`='$email',`usuario` LIKE '$usuario',`password` LIKE '$password',`respuesta` LIKE '$respuesta' 
+        SET `cedula`=$cedula,`email`='$email',`usuario` = '$usuario',`password` = '$password',`respuesta` = '$respuesta' 
         WHERE cedula LIKE '$cedula'";
 $data = $db->OperSql($sql);
 VerficarData($data);

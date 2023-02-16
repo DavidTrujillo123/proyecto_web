@@ -13,7 +13,7 @@
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <title>Admin - Tienda</title>
     <link rel="stylesheet" href="../assets/css/admin.css">

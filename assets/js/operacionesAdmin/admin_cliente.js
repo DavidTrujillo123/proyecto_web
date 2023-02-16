@@ -61,7 +61,7 @@ function eliminarCliente(cedula) {
   }
 }
 function Editar_usuario(cedula) {
-  console.log(cedula);
+  
   abrirEditar(); //metodo en el archivo operPege.js
   fetch(`../assets/php/admin/VerEditar.php?cedula=${cedula}`)
     .then((response) => response.json())
