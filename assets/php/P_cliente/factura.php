@@ -30,7 +30,7 @@ $cliente = $db->Read($sql);
 $nombres = $cliente[0]['nombre'] . ' ' . $cliente[0]['apellido'];
 $direccion=$cliente[0]['direccion'];
 $Total=0;
-$numeroFactura=0;
+$numeroFactura=1;
 $fecha=date("y/m/d");
 $RestarCantidad=0;
 //busca el id del carrito 
@@ -57,15 +57,26 @@ $PDF->SetMargins(15,15,15);
 $PDF->AddPage();
 
 //Cliente
-
+$PDF->Cell(180,0.2,'',1,1,'L');
+$PDF->Ln(2);
 $PDF->SetFillColor(225);
 $PDF->SetFont('Arial','B',14);
 $PDF->SetDrawColor(128,0,0);
-$PDF->Cell(0,10,$nombres,1,1,'C');
-$PDF->Cell(90,10,'C.I:'.$cedula,1,0,'L');
-$PDF->Cell(90,10,'Direccion:'.$direccion,1,1,'L');
-$PDF->Ln(10);
+$PDF->Cell(0,10,$nombres,0,1,'C');
+$PDF->Cell(180,0.2,'',1,1,'L');
+$PDF->Cell(90,10,'C.I:'.$cedula,0,0,'L');
+$PDF->Cell(90,10,'Direccion:'.$direccion,0,1,'L');
+$PDF->Ln(2);
+$PDF->Cell(180,0.2,'',1,1,'L');
+$PDF->SetFillColor(153,255,100);
+        $PDF->SetTextColor(85,107,47);
+ $PDF->SetFont('Times','b',16);
+
+$PDF->Ln(2);
 //Tabla de productos
+$PDF->SetDrawColor(61,174,233);
+
+
 $PDF->SetFont("Arial", "B", 16);
 $PDF->Cell(20,10,'Cant.',1,0,'L');
 $PDF->Cell(75,10,'Descripcion',1,0,'L');
@@ -93,11 +104,14 @@ while($fila=$resultado->fetch_assoc()){
       
    $operaciones=$db->OperSql($sql2);
  
-   
+   $numeroFactura+=1;
 
 }
-
-$IVA=0.11*$Total;
+$PDF->SetY(20);
+$PDF->SetX(160);
+$PDF->Cell(50,6,'Factura:   00'.$numeroFactura,1,0,'L');
+$PDF->Ln(100);
+$IVA=0.12*$Total;
 $TotalCompra=$IVA+$Total;
 
 //Insertar factura
