@@ -468,8 +468,11 @@ body.active {
 .product-card {
   text-align: center;
 }
+ 
+
 
 .product-card .card-banner::before {
+  border-radius: 16px solid var(--black) !important;
   inset: 0;
   background-color: var(--black_10);
   opacity: 0;

@@ -45,8 +45,7 @@ $id_carrito = $cart[$nrows]['id_carrito'];
 
 //Buscamos los
 $sql = "SELECT * FROM producto,carrito_item,carrito WHERE carrito_item.id_carrito=carrito.id_carrito 
-        AND producto.codigo_producto=carrito_item.codigo_producto AND carrito.id_carrito=$id_carrito";
-
+        AND producto.codigo_producto=carrito_item.codigo_producto AND carrito.id_usuario=$id_usuario ";
 
 $resultado= $db->OperSql($sql);
 
@@ -88,7 +87,7 @@ while($fila=$resultado->fetch_assoc()){
    $id_cliente=$fila['id_carrito'];
 
      
-   $sql2="UPDATE producto SET cantidad = $RestarCantidad WHERE codigo_producto = '$codigo'";
+   $sql2="UPDATE producto SET cantidad = $RestarCantidad WHERE codigo_producto = $codigo";
  
       
    $operaciones=$db->OperSql($sql2);
@@ -97,7 +96,7 @@ while($fila=$resultado->fetch_assoc()){
 
 }
 
-$IVA=0.11*$Total;
+$IVA=0.12*$Total;
 $TotalCompra=$IVA+$Total;
 
 //Insertar factura
@@ -108,8 +107,7 @@ VALUES (null,'$id_carrito','$numeroFactura','$fecha','$Total','$TotalCompra')";
 
 $sql="INSERT INTO `carrito`(`id_carrito`, `id_usuario`) VALUES (null,$id_usuario)";
 $opera=$db->OperSql($sql);
-
-$PDF->Ln(10);
+  $PDF->Ln(10);
 
 $PDF->SetX(135);$PDF->Cell(20,5,'Subtotal:',0,0,'R');
 $PDF->Cell(40,5,'$'.$Total,0,1,'R');
