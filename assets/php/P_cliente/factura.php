@@ -118,11 +118,11 @@ $PDF->SetFont("Arial", "B", 13);
 $PDF->SetX(135); $PDF->Cell(20,15,'TOTAL:',0,0,'R');
 $PDF->SetFont("Arial", "", 13);
 $PDF->Cell(40,15,'$'.$TotalCompra,0,1,'R');
-echo ('
-    <script>      
-        window.location = "./carrito.php"; 
-    </script>
-    ');
 $PDF->Output('Factura'.$numeroFactura.'.pdf','D',true);
+// echo ('
+//     <script>      
+//         window.location = "./carrito.php"; 
+//     </script>
+//     ');
 // $PDF->Close();
 

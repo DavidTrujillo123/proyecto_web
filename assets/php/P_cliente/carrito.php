@@ -230,7 +230,7 @@ if (isset($_GET['eliminar'])) {//comprueba la accion del eliminar la ejecuta
 <script>
     function comprar() {
         if (confirm("¿Estás seguro de que quiere realizar esta comprar?")) {
-            window.open("./factura.php") ;  
+            window.location = ("./factura.php");  
             
         }
         
