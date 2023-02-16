@@ -132,7 +132,7 @@ if (isset($_GET['eliminar'])) {//comprueba la accion del eliminar la ejecuta
         //Selecciona todos los datos que necesitamos para el carrito 
 
         $sql2 = "SELECT * FROM producto,carrito_item,carrito WHERE carrito_item.id_carrito=carrito.id_carrito 
-        AND producto.codigo_producto=carrito_item.codigo_producto AND carrito.id_usuario=$id_usuario ";
+        AND producto.codigo_producto=carrito_item.codigo_producto AND carrito.id_carrito=$id_carrito";
       
         $carrito = $db->OperSql($sql2);
         foreach ($carrito as $row) {

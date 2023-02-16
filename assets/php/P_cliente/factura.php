@@ -45,7 +45,8 @@ $id_carrito = $cart[$nrows]['id_carrito'];
 
 //Buscamos los
 $sql = "SELECT * FROM producto,carrito_item,carrito WHERE carrito_item.id_carrito=carrito.id_carrito 
-        AND producto.codigo_producto=carrito_item.codigo_producto AND carrito.id_usuario=$id_usuario ";
+        AND producto.codigo_producto=carrito_item.codigo_producto AND carrito.id_carrito=$id_carrito";
+
 
 $resultado= $db->OperSql($sql);
 
