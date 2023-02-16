@@ -160,7 +160,7 @@ $fnacimiento = $resultado_cliente[0]['fnacimiento'];
             <fieldset id="botones">
               <input type="button" class="Btn cancel" value="Cancelar"  onclick = "location.href = './pagina_cliente.php'"/>
               <input type="submit" class="Btn" value="Guardar Cambios" />
-              <input type="button" class="Btn" value="Eliminar Cuenta" onclick = "location.href = './assets/php/usuarios/eliminarUsuario.php?<?php echo $row['cedula']?>'"/>
+              <input type="button" class="Btn" value="Eliminar Cuenta" onclick = "location.href = './assets/php/usuarios/eliminarUsuario.php?<?php echo $row['cedula']?>'"/>    
             </fieldset>
 
           <?php } ?>
