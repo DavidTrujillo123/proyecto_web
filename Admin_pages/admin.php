@@ -29,7 +29,7 @@
         <h1>Bienvenido al panel de administrador de la tienda</h1>
         <div id="cantidad">
           <div class="carta">
-              <h2>Clientes: <?php echo $num_clientes ?></h2>
+              <h2>Usuario: <?php echo $num_clientes ?></h2>
           </div>
           <div class="carta">
               <h2>Productos: <?php echo $num_productos ?></h2>

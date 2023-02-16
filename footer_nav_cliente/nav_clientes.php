@@ -8,7 +8,7 @@
         <h2 class="section-title">La Lico Store</h2>
 
         <div class="header-action">
-            <button class="header-action-btn" aria-label="user" onclick="location.href='#'">
+            <button class="header-action-btn" aria-label="user" onclick="location.href='./editarUsuario.php'">
 
                 <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
             </button>
@@ -16,7 +16,7 @@
 
 
 
-            <a href="#" class="header-action-btn" aria-label="cart">
+            <a class="header-action-btn" aria-label="cart" onclick="location.href='./carrito.php'">
                 <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
                 <span id="num_cart" class="btn-badge"></span>
             </a>
