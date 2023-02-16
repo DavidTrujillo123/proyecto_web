@@ -93,7 +93,7 @@ $num_productos = $res->num_rows;
 
       <div class="header-action">
 
-        <button class="header-action-btn" aria-label="user" onclick="location.href='./editarUsuario.php'" >
+        <button class="header-action-btn" aria-label="user" onclick="location.href='./assets/php/P_cliente/editarUsuario.php'" >
           <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
         </button>
 
