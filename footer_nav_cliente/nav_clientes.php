@@ -2,20 +2,21 @@
     <div class="container">
 
         <div class="input-wrapper">
-            <a href="#"><img src="./assets/images/logo3.png" class="logo" alt=""></a>
+            <a href="#"><img src="../../images/logo3.png" class="logo" alt=""></a>
         </div>
 
         <h2 class="section-title">La Lico Store</h2>
 
         <div class="header-action">
-            <button class="header-action-btn" aria-label="user">
+            <button class="header-action-btn" aria-label="user" onclick="location.href='../../../editarUsuario.php'">
+
                 <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
             </button>
 
 
 
 
-            <a href="./assets/php/P_cliente/carrito.php" class="header-action-btn" aria-label="cart">
+            <a href="#" class="header-action-btn" aria-label="cart">
                 <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
                 <span id="num_cart" class="btn-badge"></span>
             </a>
@@ -49,15 +50,15 @@
         <ul class="navbar-list">
 
             <li class="navbar-item">
-                <a href="./pagina_cliente.php" class="navbar-link" data-nav-link>Inicio</a>
+                <a href="../../../pagina_cliente.php" class="navbar-link" data-nav-link>Inicio</a>
             </li>
 
             <li class="navbar-item">
-                <a href=".pagina_cliente.php #product" class="navbar-link" data-nav-link>Productos</a>
+                <a href="../../../pagina_cliente.php #product" class="navbar-link" data-nav-link>Productos</a>
             </li>
 
             <li class="navbar-item">
-                <a href="./assets/php/CerrarSesion.php" class="navbar-link" data-nav-link>Cerrar Sesion</a>
+                <a href="../CerrarSesion.php" class="navbar-link" data-nav-link>Cerrar Sesion</a>
             </li>
 
 
