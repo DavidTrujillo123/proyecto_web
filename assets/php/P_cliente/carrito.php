@@ -3,7 +3,7 @@ include("../Conexion.php");
 $db = new Conexion();
 $sql = "SELECT * FROM `cliente`";
 $res = $db->OperSql($sql);
-$num_clientes = $res->num_rows;
+$num_clientes = $res->num_rows;//numero de clientes
 $Total=0;
 session_start();
 if (!isset($_SESSION['usuario'])) { //Si no existe una sesión activa
@@ -19,11 +19,11 @@ if (!isset($_SESSION['usuario'])) { //Si no existe una sesión activa
 
 $usuario = $_SESSION['usuario']; //asigna la sesión al usuario
 $db = new Conexion();
-//busca la cedula, sea con el nombre de usuario o email en la tabla usuario
+//busca el id del usuario , sea con el nombre de usuario o email en la tabla usuario
 $sql1 = "SELECT id_usuario FROM usuario WHERE usuario= '$usuario' or email='$usuario'";
 $cliente = $db->Read($sql1);
 $id_usuario = $cliente[0]['id_usuario'];
-
+//busca el id del carrito 
 $sql_carrito = "SELECT id_carrito FROM carrito WHERE carrito.id_usuario=$id_usuario";
 $cart = $db->Read($sql_carrito);
 $id_carrito = $cart[0]['id_carrito'];
